@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-rest-exception-logger",
-    version="0.1.3",
+    version="0.1.4",
     packages=find_packages(),
     install_requires=[
         'Django>=3.2',
@@ -13,7 +13,7 @@ setup(
     description="Automatic exception logging for Django applications.",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/ErenErchamion/DjangoExceptionLogger",
+    url="https://github.com/ErenErchamion/DjangoRestExceptionLogger",
     author="Eren Berk Erkoç",
     author_email="eren.erkoc.66@gmail.com",
     classifiers=[
