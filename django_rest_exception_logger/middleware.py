@@ -7,6 +7,8 @@ from django.urls import resolve
 from rest_framework.parsers import JSONParser
 from rest_framework.request import Request
 from .models import ExceptionLog
+
+
 class ExceptionMiddleware(MiddlewareMixin):
     """
     Middleware to log exceptions in a Django application.

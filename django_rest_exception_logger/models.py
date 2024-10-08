@@ -1,6 +1,7 @@
 # Model for logging exceptions
 from django.db import models
 
+
 class ExceptionLog(models.Model):
     """
     Model to store exception logs, including request details and error information.

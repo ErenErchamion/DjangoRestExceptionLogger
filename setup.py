@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="django-rest-exception-handler",
+    name="django-rest-exception-logger",
     version="0.1",
     packages=find_packages(),
     install_requires=[
