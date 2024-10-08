@@ -22,7 +22,7 @@ This package provides middleware for automatically logging exceptions in Django 
    You can install this package from PyPI using pip:
 
    ```bash
-   pip install django-exception-logger
+   pip install django-rest-exception-logger
    ```
 
 2. **Add the middleware**
@@ -32,7 +32,7 @@ This package provides middleware for automatically logging exceptions in Django 
    ```python
    MIDDLEWARE = [
        # Other middlewares...
-       'django_exception_logger.middleware.ExceptionMiddleware',
+       'django_rest_exception_logger.middleware.ExceptionMiddleware',
    ]
    ```
 
@@ -45,7 +45,7 @@ This package provides middleware for automatically logging exceptions in Django 
      ```python
      INSTALLED_APPS = [
          # Other apps...
-         'django_exception_logger',
+         'django_rest_exception_logger',
      ]
      ```
 
@@ -56,7 +56,7 @@ This package provides middleware for automatically logging exceptions in Django 
      ```
    - if migration not detected, run this command
      ```bash
-      python manage.py makemigrations django_exception_logger
+      python manage.py makemigrations django_rest_exception_logger
      ```
        
 
