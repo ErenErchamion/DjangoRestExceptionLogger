@@ -1,5 +1,6 @@
 # Model for logging exceptions
 from django.db import models
+from django.conf import settings
 
 
 class ExceptionLog(models.Model):
@@ -21,7 +22,12 @@ class ExceptionLog(models.Model):
     request_payload = models.TextField(default="")
     request_params = models.TextField(default="")
     request_headers = models.TextField(default="")
-    user = models.ForeignKey("auth.User", on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return f"{self.error_type} - {self.timestamp}"
