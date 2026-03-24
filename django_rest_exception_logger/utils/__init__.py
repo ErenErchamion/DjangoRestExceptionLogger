@@ -14,10 +14,13 @@ from .request_data import (
     summarize_files,
 )
 
+from .exception_logging import log_exception
+
 __all__ = [
     "extract_payload_for_logging",
     "querydict_to_dict",
     "safe_json_dumps",
     "summarize_files",
+    "log_exception",
 ]
 

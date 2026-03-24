@@ -79,6 +79,30 @@ Once the middleware is installed, it will automatically log exceptions that occu
 - View name where the exception occurred
 - User who initiated the request (if available)
 
+### Manual logging (optional)
+
+If you need to log exceptions from other places (views, Celery tasks, management
+commands, signals), you can use `log_exception`.
+
+```python
+from django_rest_exception_logger.utils import log_exception
+
+try:
+    # ... your code ...
+    raise ValueError("Invalid input")
+except Exception as exc:
+    log_exception(
+        exc,
+        request=request,  # optional
+        message="Payment failed",  # optional override for ExceptionLog.message
+        extra={"order_id": 123, "step": "charge"},  # optional extra context
+        log_type="error",  # optional (default: "error")
+        view_name="payments.charge",  # optional override
+    )
+```
+
+`extra` is stored under `"_extra"` inside `request_payload`.
+
 ### Usage Examples
 
 ```python
@@ -111,7 +135,15 @@ ExceptionLog.objects.create(
 
 ## Testing
 
-To test the functionality of the middleware, you can manually raise an exception in one of your views and check the logs in your admin or database:
+Run the test suite:
+
+```bash
+pip install -r requirements-dev.txt  # if you use a dev requirements file
+pytest
+```
+
+To manually verify middleware behavior, you can raise an exception in a view and
+check the logs in your admin or database:
 
 ```python
 def test_view(request):
