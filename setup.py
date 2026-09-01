@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-rest-exception-logger",
-    version="0.3.0",
-    packages=find_packages(),
+    version="0.3.1",
+    packages=find_packages(exclude=["tests", "tests.*"]),
     install_requires=[
         'Django>=3.2',
         'djangorestframework>=3.12'
@@ -13,7 +13,7 @@ setup(
     description="Automatic exception logging for Django applications.",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/ErenErchamion/DjangoExceptionLogger",
+    url="https://github.com/ErenErchamion/DjangoRestExceptionLogger",
     author="Eren Berk Erkoç",
     author_email="eren.erkoc.66@gmail.com",
     classifiers=[

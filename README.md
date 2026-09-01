@@ -40,7 +40,7 @@ This package provides middleware for automatically logging exceptions in Django 
 
    This package comes with the `ExceptionLog` model, which stores information about exceptions. You need to integrate it into your project.
 
-   - Add `exception_logging` to the `INSTALLED_APPS` list in `settings.py`:
+   - Add `django_rest_exception_logger` to the `INSTALLED_APPS` list in `settings.py`:
 
      ```python
      INSTALLED_APPS = [
